@@ -16,6 +16,9 @@ const app = require('./app')(db)
 
 const port = process.env.PORT || 3000
 
+const usuarioInicial = require('./models/usuario');
+usuarioInicial.usuarioInicial(db)();
+
 app.listen(port, (err) => {
     if (err) {
         console.log('Erro no servidor')
